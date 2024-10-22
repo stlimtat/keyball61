@@ -161,11 +161,11 @@
 
         number_layer {
             bindings = <
-&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                     &kp F6     &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&trans     &trans  &trans  &trans  &trans  &kp MINUS                  &kp PLUS   &kp N7  &kp N8  &kp N9  &trans   &kp F12
-&trans     &trans  &trans  &trans  &trans  &kp UNDER                  &kp EQUAL  &kp N4  &kp N5  &kp N6  &trans   &trans
-&trans     &trans  &trans  &trans  &trans  &trans     &trans  &trans  &kp N0     &kp N1  &kp N2  &kp N3  &trans   &trans
-&trans     &trans  &trans  &trans  &mo 2   &trans     &trans  &trans  &trans                             &trans   &trans
+&kp GRAVE  &kp F1  &kp F2            &kp F3            &kp F4  &kp F5                        &kp F6     &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
+&trans     &trans  &trans            &trans            &trans  &kp MINUS                     &kp PLUS   &kp N7  &kp N8  &kp N9  &trans   &kp F12
+&trans     &trans  &trans            &trans            &trans  &kp UNDER                     &kp EQUAL  &kp N4  &kp N5  &kp N6  &trans   &trans
+&trans     &trans  &trans            &trans            &trans  &trans     &trans     &trans  &kp N0     &kp N1  &kp N2  &kp N3  &trans   &trans
+&trans     &trans  &kp LS(LA(LBKT))  &kp LS(LA(RBKT))  &mo 2   &kp LEFT   &kp RIGHT  &kp UP  &kp DOWN                           &trans   &trans
             >;
 
             label = "NUM";
@@ -174,11 +174,11 @@
         symbol_layer {
             label = "SYM";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &kp RS(F6)  &kp RA(F6)  &trans    &trans       &trans  &trans
-&trans      &trans        &kp UP        &trans        &trans        &trans                        &trans      &kp HOME    &kp UP    &kp PAGE_UP  &trans  &trans
-&trans      &kp LEFT      &kp DOWN      &kp RIGHT     &trans        &trans                        &trans      &kp LEFT    &kp DOWN  &kp RIGHT    &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans      &kp END     &trans    &kp PG_DN    &trans  &trans
-&trans      &trans        &trans        &trans        &mo 3         &trans        &trans  &trans  &trans                                         &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                &kp RS(F6)  &kp RA(F6)  &trans    &trans       &trans  &trans
+&trans      &trans        &kp UP        &trans        &trans        &trans                                      &trans      &kp HOME    &kp UP    &kp PAGE_UP  &trans  &trans
+&trans      &kp LEFT      &kp DOWN      &kp RIGHT     &trans        &trans                                      &trans      &kp LEFT    &kp DOWN  &kp RIGHT    &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans            &trans            &trans  &trans      &kp END     &trans    &kp PG_DN    &trans  &trans
+&trans      &trans        &trans        &trans        &mo 3         &kp LS(LA(LBKT))  &kp LS(LA(RBKT))  &trans  &trans                                         &trans  &trans
             >;
         };
 
