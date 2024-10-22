@@ -2,6 +2,7 @@
 #define NUM     1
 #define SYM     2
 #define MOUSE   3
+#define SNIPE   4
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -196,7 +197,18 @@
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &trans  &trans    &trans    &trans    &trans  &trans
 &trans      &trans        &trans        &trans        &trans        &trans                        &trans  &trans    &mkp MB4  &trans    &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans                        &trans  &mkp MB1  &mkp MB5  &mkp MB2  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans                        &trans  &mkp MB1  &mo 4     &mkp MB2  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans    &mkp MB3  &trans    &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &sl 0   &trans  &trans                                &trans  &trans
+            >;
+        };
+
+        snipe_layer {
+            label = "SNIPE";
+            bindings = <
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &trans  &trans    &trans    &trans    &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans                        &trans  &trans    &mkp MB4  &trans    &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans                        &trans  &mkp MB1  &mo 3     &mkp MB2  &trans  &trans
 &trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans    &mkp MB3  &trans    &trans  &trans
 &trans      &trans        &trans        &trans        &trans        &trans        &sl 0   &trans  &trans                                &trans  &trans
             >;
