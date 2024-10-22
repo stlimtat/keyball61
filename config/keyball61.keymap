@@ -101,7 +101,7 @@
 
         cmd-v {
             bindings = <&kp LG(V)>;
-            key-positions = <39 40>;
+            key-positions = <40 41>;
         };
 
         cmd-q {
