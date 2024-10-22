@@ -141,7 +141,12 @@
 
         cmd-o {
             bindings = <&kp LG(O)>;
-            key-positions = <34 33>;
+            key-positions = <34 35>;
+        };
+
+        cmd-n {
+            bindings = <&kp LG(N)>;
+            key-positions = <31 32>;
         };
     };
 
