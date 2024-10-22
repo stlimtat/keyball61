@@ -71,17 +71,17 @@
 
         right-reset {
             bindings = <&bootloader>;
-            key-positions = <10 11>;
+            key-positions = <59 60>;
         };
 
         left-reset {
             bindings = <&bootloader>;
-            key-positions = <0 1>;
+            key-positions = <50 51>;
         };
 
         tb-snipe6 {
-            bindings = <&mo 6>;
-            key-positions = <32 33>;
+            bindings = <&mo 3>;
+            key-positions = <43 44>;
         };
 
         cmd-z {
@@ -104,24 +104,9 @@
             key-positions = <40 41>;
         };
 
-        cmd-q {
-            bindings = <&kp LG(Q)>;
-            key-positions = <13 14>;
-        };
-
         cmd-w {
             bindings = <&kp LG(W)>;
             key-positions = <14 15>;
-        };
-
-        cmd-r {
-            bindings = <&kp LG(R)>;
-            key-positions = <26 27>;
-        };
-
-        cmd-s {
-            bindings = <&kp LG(S)>;
-            key-positions = <27 28>;
         };
 
         cmd-f {
@@ -139,14 +124,14 @@
             key-positions = <44 45>;
         };
 
-        cmd-o {
-            bindings = <&kp LG(O)>;
-            key-positions = <34 35>;
+        cmd-r {
+            bindings = <&kp LG(R)>;
+            key-positions = <26 27>;
         };
 
-        cmd-n {
-            bindings = <&kp LG(N)>;
-            key-positions = <31 32>;
+        cmd-s {
+            bindings = <&kp LG(S)>;
+            key-positions = <28 27>;
         };
     };
 
@@ -159,8 +144,8 @@
 &gresc          &kp N1            &kp N2           &kp N3           &kp N4               &kp N5                                                     &kp N6                        &kp N7               &kp N8               &kp N9             &kp N0               &kp MINUS
 &kp TAB         &bhm LC(LALT) Q   &bhm LC(LGUI) W  &bhm LA(LGUI) F  &bhm LC(LA(LGUI)) P  &lt 2 G                                                    &lt 2 J                       &bhm RC(RA(RGUI)) L  &bhm RA(RGUI) U      &bhm RC(RGUI) Y    &bhm RC(RALT) SEMI   &kp BACKSLASH
 &kp BSPC        &bhm LCTRL A      &bhm LALT R      &bhm LGUI S      &bhm LSHIFT T        &lt 1 D                                                    &lt 1 H                       &bhm RSHIFT N        &bhm RGUI E          &bhm RALT I        &bhm RCTRL O         &kp SQT
-&left_shift     &bhm LS(LCTRL) Z  &bhm LS(LALT) X  &bhm LS(LGUI) C  &bhm LS(LC(LALT)) V  &bhm LS(LA(LC(LEFT_GUI))) B  &lt 4 LBKT  &lt 4 RBKT        &bhm RS(RC(RA(RIGHT_GUI))) K  &bhm RS(RC(RALT)) M  &bhm RS(RGUI) COMMA  &bhm RS(RALT) DOT  &bhm RS(RCTRL) FSLH  &right_shift
-&lt 1 C_VOL_DN  &lt 2 C_VOL_UP    &kp LEFT_ARROW   &kp RIGHT_ARROW  &kp SPACE            &bhm LSHFT ENTER             &mo 1       &bhm RSHFT ENTER  &kp SPACE                                                                                  &lt 2 UP             &lt 1 DOWN
+&left_shift     &bhm LS(LCTRL) Z  &bhm LS(LALT) X  &bhm LS(LGUI) C  &bhm LS(LC(LALT)) V  &bhm LS(LA(LC(LEFT_GUI))) B  &lt 3 LBKT  &lt 3 RBKT        &bhm RS(RC(RA(RIGHT_GUI))) K  &bhm RS(RC(RALT)) M  &bhm RS(RGUI) COMMA  &bhm RS(RALT) DOT  &bhm RS(RCTRL) FSLH  &right_shift
+&lt 1 C_VOL_DN  &lt 2 C_VOL_UP    &kp LEFT_ARROW   &kp RIGHT_ARROW  &kp SPACE            &bhm LSHFT ENTER             &sl 1       &bhm RSHFT ENTER  &kp SPACE                                                                                  &lt 2 UP             &lt 1 DOWN
             >;
         };
 
@@ -170,7 +155,7 @@
 &trans     &trans  &kp LS(N7)        &kp LS(N8)        &kp LS(N9)  &kp MINUS                   &kp PLUS   &kp N7  &kp N8  &kp N9  &trans   &kp F12
 &trans     &trans  &kp LS(N4)        &kp LS(N5)        &kp LS(N6)  &kp UNDER                   &kp EQUAL  &kp N4  &kp N5  &kp N6  &trans   &kp F13
 &trans     &trans  &kp LS(N1)        &kp LS(N2)        &kp LS(N3)  &kp LS(N0)  &trans  &trans  &kp N0     &kp N1  &kp N2  &kp N3  &trans   &trans
-&trans     &trans  &kp LS(LG(LBKT))  &kp LS(LG(RBKT))  &kp LEFT    &kp RIGHT   &mo 2   &kp UP  &kp DOWN                           &trans   &trans
+&trans     &trans  &kp LS(LG(LBKT))  &kp LS(LG(RBKT))  &kp LEFT    &kp RIGHT   &sl 2   &kp UP  &kp DOWN                           &trans   &trans
             >;
 
             label = "NUM";
@@ -179,55 +164,22 @@
         symbol_layer {
             label = "SYM";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3      &bt BT_SEL 4                      &kp RS(F6)  &kp RA(F7)  &trans    &trans       &trans  &trans
-&trans      &trans        &trans        &kp UP        &trans            &trans                            &kp RA(F6)  &kp HOME    &kp UP    &kp PAGE_UP  &trans  &trans
-&trans      &trans        &kp LEFT      &kp DOWN      &kp RIGHT         &trans                            &trans      &kp LEFT    &kp DOWN  &kp RIGHT    &trans  &trans
-&trans      &trans        &trans        &trans        &trans            &trans            &trans  &trans  &trans      &kp END     &trans    &kp PG_DN    &trans  &trans
-&trans      &trans        &trans        &trans        &kp LS(LG(LBKT))  &kp LS(LG(RBKT))  &mo 3   &trans  &trans                                         &trans  &trans
-            >;
-        };
-
-        function_layer {
-            label = "FUN";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &mo 4   &trans  &trans                          &trans  &trans
+&trans  &trans  &trans    &trans    &trans            &trans                            &kp RS(F6)  &kp RA(F7)  &kp RG(F7)  &trans       &trans  &trans
+&trans  &trans  &kp HOME  &kp UP    &kp PG_UP         &trans                            &kp RG(F6)  &kp HOME    &kp UP      &kp PAGE_UP  &trans  &trans
+&trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT         &trans                            &trans      &kp LEFT    &kp DOWN    &kp RIGHT    &trans  &trans
+&trans  &trans  &kp END   &trans    &kp PG_DN         &trans            &trans  &trans  &trans      &kp END     &trans      &kp PG_DN    &trans  &trans
+&trans  &trans  &trans    &trans    &kp LS(LG(LBKT))  &kp LS(LG(RBKT))  &sl 3   &trans  &trans                                           &trans  &trans
             >;
         };
 
         mouse_layer {
             label = "MOUSE";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans    &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans    &mkp MB4  &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &mkp MB1  &mkp MB5  &mkp MB2  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &mkp MB3  &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &mo 0   &trans  &trans                                &trans  &trans
-            >;
-        };
-
-        scroll_layer {
-            label = "SCROLL";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans
-            >;
-        };
-
-        snipe_layer {
-            label = "SNIPE";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans  &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans  &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &mkp LCLK  &mo 5   &mkp RCLK  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &trans  &trans    &trans    &trans    &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans                        &trans  &trans    &mkp MB4  &trans    &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans                        &trans  &mkp MB1  &mkp MB5  &mkp MB2  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans    &mkp MB3  &trans    &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &sl 0   &trans  &trans                                &trans  &trans
             >;
         };
     };
