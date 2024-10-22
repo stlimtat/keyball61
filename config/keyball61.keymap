@@ -51,15 +51,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-        tilesc: tilde_escape {
-            compatible = "zmk,behavior-mod-morph";
-            label = "TILESC";
-            bindings = <&kp ESC>, <&kp TILDE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RSFT|MOD_LSFT)>;
-        };
-
         left_shift: left_shift {
             compatible = "zmk,behavior-tap-dance";
             label = "LEFT_SHIFT";
@@ -160,11 +151,11 @@
         colemak {
             label = "COLEMAK";
             bindings = <
-&gresc                            &kp N1             &kp N2           &kp N3           &kp N4               &kp N5                                                           &kp N6                        &kp N7               &kp N8               &kp N9             &kp N0               &kp MINUS
-&kp TAB                           &bhm LC(LALT) Q    &bhm LC(LGUI) W  &bhm LA(LGUI) F  &bhm LC(LA(LGUI)) P  &lt 2 G                                                          &lt 2 J                       &bhm RC(RA(RGUI)) L  &bhm RA(RGUI) U      &bhm RC(RGUI) Y    &bhm RC(RALT) SEMI   &kp BACKSLASH
-&kp BSPC                          &bhm LCTRL A       &bhm LALT R      &bhm LGUI S      &bhm LSHIFT T        &lt 1 D                                                          &lt 1 H                       &bhm RSHIFT N        &bhm RGUI E          &bhm RALT I        &bhm RCTRL O         &kp SQT
-&bhm LEFT_SHIFT LEFT_PARENTHESIS  &bhm LS(LCTRL) Z   &bhm LS(LALT) X  &bhm LS(LGUI) C  &bhm LS(LC(LALT)) V  &bhm LS(LA(LC(LEFT_GUI))) B  &lt 3 LBKT        &lt 3 RBKT        &bhm RS(RC(RA(RIGHT_GUI))) K  &bhm RS(RC(RALT)) M  &bhm RS(RGUI) COMMA  &bhm RS(RALT) DOT  &bhm RS(RCTRL) FSLH  &bhm RIGHT_SHIFT RIGHT_PARENTHESIS
-&kp C_VOLUME_DOWN                 &kp C_VOLUME_DOWN  &kp LEFT_ARROW   &kp RIGHT_ARROW  &mo 1                &kp SPACE                    &bhm LSHFT ENTER  &bhm RSHFT ENTER  &kp SPACE                                                                                  &kp UP_ARROW         &kp DOWN_ARROW
+&gresc             &kp N1             &kp N2           &kp N3           &kp N4               &kp N5                                                           &kp N6                        &kp N7               &kp N8               &kp N9             &kp N0               &kp MINUS
+&kp TAB            &bhm LC(LALT) Q    &bhm LC(LGUI) W  &bhm LA(LGUI) F  &bhm LC(LA(LGUI)) P  &lt 2 G                                                          &lt 2 J                       &bhm RC(RA(RGUI)) L  &bhm RA(RGUI) U      &bhm RC(RGUI) Y    &bhm RC(RALT) SEMI   &kp BACKSLASH
+&kp BSPC           &bhm LCTRL A       &bhm LALT R      &bhm LGUI S      &bhm LSHIFT T        &lt 1 D                                                          &lt 1 H                       &bhm RSHIFT N        &bhm RGUI E          &bhm RALT I        &bhm RCTRL O         &kp SQT
+&left_shift        &bhm LS(LCTRL) Z   &bhm LS(LALT) X  &bhm LS(LGUI) C  &bhm LS(LC(LALT)) V  &bhm LS(LA(LC(LEFT_GUI))) B  &lt 3 LBKT        &lt 3 RBKT        &bhm RS(RC(RA(RIGHT_GUI))) K  &bhm RS(RC(RALT)) M  &bhm RS(RGUI) COMMA  &bhm RS(RALT) DOT  &bhm RS(RCTRL) FSLH  &right_shift
+&kp C_VOLUME_DOWN  &kp C_VOLUME_DOWN  &kp LEFT_ARROW   &kp RIGHT_ARROW  &mo 1                &kp SPACE                    &bhm LSHFT ENTER  &bhm RSHFT ENTER  &kp SPACE                                                                                  &kp UP_ARROW         &kp DOWN_ARROW
             >;
         };
 
@@ -183,10 +174,10 @@
         symbol_layer {
             label = "SYM";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &kp RS(F6)  &kp RA(F6)  &trans  &trans         &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans                        &trans      &kp HOME    &trans  &kp PAGE_UP    &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans                        &trans      &trans      &trans  &trans         &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans      &kp END     &trans  &kp PAGE_DOWN  &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &kp RS(F6)  &kp RA(F6)  &trans    &trans       &trans  &trans
+&trans      &trans        &kp UP        &trans        &trans        &trans                        &trans      &kp HOME    &kp UP    &kp PAGE_UP  &trans  &trans
+&trans      &kp LEFT      &kp DOWN      &kp RIGHT     &trans        &trans                        &trans      &kp LEFT    &kp DOWN  &kp RIGHT    &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans      &kp END     &trans    &kp PG_DN    &trans  &trans
 &trans      &trans        &trans        &trans        &mo 3         &trans        &trans  &trans  &trans                                         &trans  &trans
             >;
         };
