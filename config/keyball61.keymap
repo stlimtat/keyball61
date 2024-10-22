@@ -135,7 +135,7 @@
         };
 
         cmd-k {
-            bindings = <&kp LG(K)>;
+            bindings = <&kp RG(K)>;
             key-positions = <44 45>;
         };
 
