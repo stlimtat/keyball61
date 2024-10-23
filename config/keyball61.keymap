@@ -29,7 +29,7 @@
         compatible = "zmk,input-behavior-listener";
 
         /* the input point device alias */
-        device = <&pd1>;
+        device = <&spi1>;
 
         /* only enable in default layer (DEF) & mouse key layer (MSK) */
         layers = <COLEMAK NUM SYM MOUSE>;
@@ -56,7 +56,7 @@
     /* input config for mouse scroll mode on momentary mouse scoll layer (MSC) */
     tb0_msl_ibl {
         compatible = "zmk,input-behavior-listener";
-        device = <&pd1>;
+        device = <&spi1>;
         layers = <COLEMAK NUM SYM>;
         evt-type = <INPUT_EV_REL>;
 
