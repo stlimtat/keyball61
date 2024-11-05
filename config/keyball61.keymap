@@ -81,51 +81,51 @@
             tapping-term-ms = <150>;
         };
 
-        lt1_g_minus: lt1_g_minus{
+        mylt1_g_minus: mylt1_g_minus{
             bindings = <&lt 1 G>, <&kp MINUS>;
             #binding-cells = <0>;
             compatible = "zmk,behavior-tap-dance";
-            label = "lt1_g_minus";
+            label = "mylt1_g_minus";
             tapping-term-ms = <200>;
         };
 
-        lt2_d_under: lt2_d_under{
+        mylt2_d_under: mylt2_d_under{
             bindings = <&lt 2 D>, <&kp UNDER>;
             #binding-cells = <0>;
             compatible = "zmk,behavior-tap-dance";
-            label = "lt2_d_under";
+            label = "mylt2_d_under";
             tapping-term-ms = <200>;
         };
 
-        lt3_b_lpar: lt3_b_lpar{
+        mylt3_b_lpar: mylt3_b_lpar{
             bindings = <&lt 3 B>, <&kp LBRC>, <&kp LBKT>;
             #binding-cells = <0>;
             compatible = "zmk,behavior-tap-dance";
-            label = "lt3_b_lpar";
+            label = "mylt3_b_lpar";
             tapping-term-ms = <200>;
         };
 
-        lt1_j_plus: lt1_j_plus{
+        mylt1_j_plus: mylt1_j_plus{
             bindings = <&lt 1 J>, <&kp PLUS>;
             #binding-cells = <0>;
             compatible = "zmk,behavior-tap-dance";
-            label = "lt1_j_plus";
+            label = "mylt1_j_plus";
             tapping-term-ms = <200>;
         };
 
-        lt2_h_equal: lt2_h_equal{
+        mylt2_h_equal: mylt2_h_equal{
             bindings = <&lt 2 H>, <&kp EQUAL>;
             #binding-cells = <0>;
             compatible = "zmk,behavior-tap-dance";
-            label = "lt2_h_equal";
+            label = "mylt2_h_equal";
             tapping-term-ms = <200>;
         };
 
-        lt3_k_rpar: lt3_k_rpar {
+        mylt3_k_rpar: mylt3_k_rpar {
             bindings = <&lt 3 K>, <&kp RBRC>, <&kp RBKT>;
             #binding-cells = <0>;
             compatible = "zmk,behavior-tap-dance";
-            label = "lt3_k_rpar";
+            label = "mylt3_k_rpar";
             tapping-term-ms = <200>;
         };
 
@@ -265,11 +265,11 @@
         colemak {
             label = "COLEMAK";
             bindings = <
-&gresc          &kp N1            &kp N2           &kp N3           &kp N4               &kp N5                                            &kp N6               &kp N7               &kp N8               &kp N9             &kp N0               &kp MINUS
-&kp TAB         &bhm LC(LALT) Q   &bhm LC(LGUI) W  &bhm LA(LGUI) F  &bhm LC(LA(LGUI)) P  &lt 1 G                                           &lt 1 J              &bhm RC(RA(RGUI)) L  &bhm RA(RGUI) U      &bhm RC(RGUI) Y    &bhm RC(RALT) SEMI   &kp BACKSLASH
-&bspc_del       &bhm LCTRL A      &bhm LALT R      &bhm LGUI S      &bhm LSHIFT T        &lt 2 D                                           &lt 2 H              &bhm RSHIFT N        &bhm RGUI E          &bhm RALT I        &bhm RCTRL O         &kp SQT
-&left_shift     &bhm LS(LCTRL) Z  &bhm LS(LALT) X  &bhm LS(LGUI) C  &bhm LS(LC(LALT)) V  &lt 3 B           &left_bkt     &right_bkt        &bhm RS(RC(RALT)) K  &bhm RS(RC(RALT)) M  &bhm RS(RGUI) COMMA  &bhm RS(RALT) DOT  &bhm RS(RCTRL) FSLH  &right_shift
-&lt 1 C_VOL_DN  &lt 2 C_VOL_UP    &kp LEFT         &kp RIGHT        &kp SPACE            &bhm LSHFT ENTER  &sl 1         &bhm RSHFT ENTER  &kp SPACE                                                                         &lt 2 UP             &lt 1 DOWN
+&gresc          &kp N1            &kp N2           &kp N3           &kp N4               &kp N5                                            &kp N6           &kp N7               &kp N8               &kp N9             &kp N0               &kp MINUS
+&kp TAB         &gr_tilde_q       &bhm LC(LGUI) W  &bhm LA(LGUI) F  &bhm LC(LA(LGUI)) P  &mylt1_g_minus                                    &mylt1_j_plus    &bhm RC(RA(RGUI)) L  &bhm RA(RGUI) U      &bhm RC(RGUI) Y    &bhm RC(RALT) SEMI   &kp BACKSLASH
+&bspc_del       &bhm LCTRL A      &bhm LALT R      &bhm LGUI S      &bhm LSHIFT T        &mylt2_d_under                                    &mylt2_h_equal   &bhm RSHIFT N        &bhm RGUI E          &bhm RALT I        &bhm RCTRL O         &kp SQT
+&left_shift     &bhm LS(LCTRL) Z  &bhm LS(LALT) X  &bhm LS(LGUI) C  &bhm LS(LC(LALT)) V  &mylt3_b_lpar     &left_bkt     &right_bkt        &mylt3_k_rpar    &bhm RS(RC(RALT)) M  &bhm RS(RGUI) COMMA  &bhm RS(RALT) DOT  &bhm RS(RCTRL) FSLH  &right_shift
+&lt 1 C_VOL_DN  &lt 2 C_VOL_UP    &kp LEFT         &kp RIGHT        &kp SPACE            &bhm LSHFT ENTER  &sl 1         &bhm RSHFT ENTER  &kp SPACE                                                                     &lt 2 UP             &lt 1 DOWN
             >;
         };
 
