@@ -65,7 +65,7 @@
         };
 
         gr_tilde_q: grave_tilde_q {
-            bindings = <&bhm LC(LALT) GRAVE>, <&kp Q>, <&kp TILDE>;
+            bindings = <&bhm LC(LALT) Q>, <&kp GRAVE>, <&kp TILDE>;
             #binding-cells = <0>;
             compatible = "zmk,behavior-tap-dance";
             label = "GRAVE_TILDE_Q";
