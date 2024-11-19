@@ -266,8 +266,8 @@
             label = "COLEMAK";
             bindings = <
 &gresc          &kp N1            &kp N2           &kp N3           &kp N4               &kp N5                                            &kp N6           &kp N7               &kp N8               &kp N9             &kp N0               &kp MINUS
-&kp TAB         &gr_tilde_q       &bhm LC(LGUI) W  &bhm LA(LGUI) F  &bhm LC(LA(LGUI)) P  &mylt1_g_minus                                    &mylt1_j_plus    &bhm RC(RA(RGUI)) L  &bhm RA(RGUI) U      &bhm RC(RGUI) Y    &bhm RC(RALT) SEMI   &kp BACKSLASH
-&bspc_del       &bhm LCTRL A      &bhm LALT R      &bhm LGUI S      &bhm LSHIFT T        &mylt2_d_under                                    &mylt2_h_equal   &bhm RSHIFT N        &bhm RGUI E          &bhm RALT I        &bhm RCTRL O         &kp SQT
+&kp TAB         &gr_tilde_q       &bhm LC(LGUI) W  &bhm LA(LGUI) F  &bhm LC(LA(LGUI)) P  &lt 1 G                                           &mylt1_j_plus    &bhm RC(RA(RGUI)) L  &bhm RA(RGUI) U      &bhm RC(RGUI) Y    &bhm RC(RALT) SEMI   &kp BACKSLASH
+&bspc_del       &bhm LCTRL A      &bhm LALT R      &bhm LGUI S      &bhm LSHIFT T        &lt 2 D                                           &mylt2_h_equal   &bhm RSHIFT N        &bhm RGUI E          &bhm RALT I        &bhm RCTRL O         &kp SQT
 &left_shift     &bhm LS(LCTRL) Z  &bhm LS(LALT) X  &bhm LS(LGUI) C  &bhm LS(LC(LALT)) V  &mylt3_b_lpar     &left_bkt     &right_bkt        &mylt3_k_rpar    &bhm RS(RC(RALT)) M  &bhm RS(RGUI) COMMA  &bhm RS(RALT) DOT  &bhm RS(RCTRL) FSLH  &right_shift
 &lt 1 C_VOL_DN  &lt 2 C_VOL_UP    &kp LEFT         &kp RIGHT        &kp SPACE            &bhm LSHFT ENTER  &sl 1         &bhm RSHFT ENTER  &kp SPACE                                                                     &lt 2 UP             &lt 1 DOWN
             >;
