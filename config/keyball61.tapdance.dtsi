@@ -1,0 +1,72 @@
+#define TAP_DANCE_TERM_MS 220
+/* Symbol keys tap dance */
+ZMK_TAP_DANCE(bslh_pipe,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&kp BSLH>, <&kp PIPE>;
+)
+ZMK_TAP_DANCE(sqt_dqt,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&kp SQT>, <&kp DOT>;
+)
+ZMK_TAP_DANCE(semi_col,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&hmr RC(RALT) SEMI>, <&kp COLON>;
+)
+ZMK_TAP_DANCE(fslh_qn,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&hmr RS(RCTRL) FSLH>, <&kp QMARK>;
+)
+ZMK_TAP_DANCE(dot_gt,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&hmr RS(RALT) DOT>, <&kp GT>;
+)
+ZMK_TAP_DANCE(comma_lt,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&hmr RS(RGUI) COMMA>, <&kp LT>;
+)
+
+/* Shift keys tap dance - left and right */
+ZMK_TAP_DANCE(left_shift,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&hml LSHFT>, <&caps_word>;
+)
+ZMK_TAP_DANCE(right_shift,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&hmr RSHFT>, <&caps_word>;
+)
+
+/* LT keys tap dance */
+ZMK_TAP_DANCE(lt1_g_minus,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&lt 1 G>, <&kp G>, <&kp MINUS>;
+)
+ZMK_TAP_DANCE(lt2_d_under,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&lt 2 D>, <&kp D>, <&kp UNDER>;
+)
+ZMK_TAP_DANCE(lt3_b_lbrc,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&lt 3 B>, <&kp B>, <&kp LBRC>;
+)
+ZMK_TAP_DANCE(lt1_j_plus,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&lt 1 J>, <&kp J>, <&kp PLUS>;
+)
+ZMK_TAP_DANCE(lt2_h_equal,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&lt 2 H>, <&kp H>, <&kp EQUAL>;
+)
+ZMK_TAP_DANCE(lt3_k_rbrc,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&lt 3 K>, <&kp K>, <&kp RBRC>;
+)
+
+/* Bracket keys tap dance - left and right */
+ZMK_TAP_DANCE(left_bkt,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&hml LS(LC(LA(LGUI))) LBKT>, <&kp LBRC>, <&kp LPAR>;
+)
+ZMK_TAP_DANCE(right_bkt,
+    tapping-term-ms = <TAP_DANCE_TERM_MS>;
+    bindings = <&hml RS(RC(RA(RGUI))) RBKT>, <&kp RBRC>, <&kp RPAR>;
+)
