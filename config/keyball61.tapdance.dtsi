@@ -1,4 +1,5 @@
-#define TAP_DANCE_TERM_MS 220
+#define TAP_DANCE_TERM_MS 150
+
 /* Symbol keys tap dance */
 ZMK_TAP_DANCE(bslh_pipe,
     tapping-term-ms = <TAP_DANCE_TERM_MS>;
