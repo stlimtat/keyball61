@@ -68,8 +68,8 @@
         hold-trigger-key-positions = <TRIGGER_POS>; \
         hold-trigger-on-release; \
     )
-MAKE_HRM(hml, &kp, &kp, KEYS_R NOT_HOME_L THUMBS_R THUMBS_L)  // left-hand HRMs
-MAKE_HRM(hmr, &kp, &kp, KEYS_L NOT_HOME_R THUMBS_L THUMBS_R)  // right-hand HRMs
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS_R THUMBS_L)  // left-hand HRMs
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS_L THUMBS_R)  // right-hand HRMs
 
 // HRM combo hack - workaround for lack of tap-only combos (ZMK issue #544)
 #define ZMK_COMBO_8(NAME, TAP, KEYPOS, LAYERS, COMBO_TERM, COMBO_IDLE, HOLD, SIDE) \
@@ -87,12 +87,10 @@ ZMK_MOD_MORPH(bs_del,
 )
 ZMK_MOD_MORPH(gr_esc,
   bindings = <&kp ESC>, <&kp GRAVE>;
-  keep-mods = <MOD_RSFT>;
   mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
 )
 ZMK_MOD_MORPH(tilde_esc,
   bindings = <&gr_esc>, <&kp TILDE>;
-  keep-mods = <MOD_RCTL>;
   mods = <(MOD_LALT|MOD_LCTL|MOD_RALT|MOD_RCTL)>;
 )
 

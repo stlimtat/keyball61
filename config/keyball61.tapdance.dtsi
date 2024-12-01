@@ -1,39 +1,13 @@
 #define TAP_DANCE_TERM_MS 200
 
-/* Symbol keys tap dance */
-ZMK_TAP_DANCE(bslh_pipe,
-    tapping-term-ms = <TAP_DANCE_TERM_MS>;
-    bindings = <&kp BSLH>, <&kp PIPE>;
-)
-ZMK_TAP_DANCE(sqt_dqt,
-    tapping-term-ms = <TAP_DANCE_TERM_MS>;
-    bindings = <&kp SQT>, <&kp DOT>;
-)
-ZMK_TAP_DANCE(semi_col,
-    tapping-term-ms = <TAP_DANCE_TERM_MS>;
-    bindings = <&hmr RC(RALT) SEMI>, <&kp COLON>;
-)
-ZMK_TAP_DANCE(fslh_qn,
-    tapping-term-ms = <TAP_DANCE_TERM_MS>;
-    bindings = <&hmr RS(RCTRL) FSLH>, <&kp QMARK>;
-)
-ZMK_TAP_DANCE(dot_gt,
-    tapping-term-ms = <TAP_DANCE_TERM_MS>;
-    bindings = <&hmr RS(RALT) DOT>, <&kp GT>;
-)
-ZMK_TAP_DANCE(comma_lt,
-    tapping-term-ms = <TAP_DANCE_TERM_MS>;
-    bindings = <&hmr RS(RGUI) COMMA>, <&kp LT>;
-)
-
 /* Shift keys tap dance - left and right */
 ZMK_TAP_DANCE(left_shift,
     tapping-term-ms = <TAP_DANCE_TERM_MS>;
-    bindings = <&hml LSHFT>, <&caps_word>;
+    bindings = <&hml LSHFT LPAR>, <&caps_word>;
 )
 ZMK_TAP_DANCE(right_shift,
     tapping-term-ms = <TAP_DANCE_TERM_MS>;
-    bindings = <&hmr RSHFT>, <&caps_word>;
+    bindings = <&hmr RSHFT RPAR>, <&caps_word>;
 )
 
 /* Bracket keys tap dance - left and right */
