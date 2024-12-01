@@ -8,8 +8,12 @@
 #include "zmk-helpers/helper.h"
 #include "key-labels/keyball61.h"
 
-#define KEYS_L LN4 LN3 LN2 LN1 LN0 LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB1 LB2 LB3 LB4 LB5 // left hand
+#define HOME_MOD_L LM1 LM2 LM3 LM4 // left hand
+#define HOME_MOD_R RM1 RM2 RM3 RM4 // right hand
+#define KEYS_L LN0 LN1 LN2 LN3 LN4 LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB1 LB2 LB3 LB4 LB5 // left hand
 #define KEYS_R RN0 RN1 RN2 RN3 RN4 RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RB4 RB5 // right hand
+#define NOT_HOME_L LN0 LN1 LN2 LN3 LN4 LT0 LT1 LT2 LT3 LT4 LM0 LB1 LB2 LB3 LB4 LB5 // left hand
+#define NOT_HOME_R RN0 RN1 RN2 RN3 RN4 RT0 RT1 RT2 RT3 RT4 RM0 RB1 RB2 RB3 RB4 RB5 // right hand
 #define THUMBS_L LH4 LH3 LH2 LH1
 #define THUMBS_R RH0 RH1 RH2 RH3
 
@@ -19,7 +23,7 @@
 #define MOUSE   3
 #define SNIPE   4
 
-#define HOLD_TAPPING_TERM_MS 280
+#define HOLD_TAPPING_TERM_MS 200
 #define QUICK_TAP_MS 175
 #define REQ_PRIOR_IDLE_MS 150
 #define TAPPING_TERM_MS 200
@@ -60,8 +64,8 @@
         hold-trigger-key-positions = <TRIGGER_POS>; \
         hold-trigger-on-release; \
     )
-MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS_R THUMBS_L)  // left-hand HRMs
-MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS_L THUMBS_R)  // right-hand HRMs
+MAKE_HRM(hml, &kp, &kp, KEYS_R NOT_HOME_L THUMBS_R THUMBS_L)  // left-hand HRMs
+MAKE_HRM(hmr, &kp, &kp, KEYS_L NOT_HOME_R THUMBS_L THUMBS_R)  // right-hand HRMs
 
 // HRM combo hack - workaround for lack of tap-only combos (ZMK issue #544)
 #define ZMK_COMBO_8(NAME, TAP, KEYPOS, LAYERS, COMBO_TERM, COMBO_IDLE, HOLD, SIDE) \
@@ -84,38 +88,68 @@ ZMK_MOD_MORPH(gr_esc,
 )
 
 /* Keymap */
-ZMK_LAYER(colemak,
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+    /********************************************************************************/
+    /* COLEMAK */
+    /********************************************************************************/
+    colemak {
+      bindings = <
 &gr_esc         &kp N1            &kp N2           &kp N3           &kp N4               &kp N5                                            &kp N6         &kp N7               &kp N8               &kp N9             &kp N0               &kp MINUS
-&kp TAB         &hml LC(LALT) Q   &hml LC(LGUI) W  &hml LA(LGUI) F  &hml LC(LA(LGUI)) P  &lt1_g_minus                                      &lt1_j_plus    &hmr RC(RA(RGUI)) L  &hmr RA(RGUI) U      &hmr RC(RGUI) Y    &hmr RC(RALT) SEMI   &bslh_pipe
-&bs_del         &hml LCTRL A      &hml LALT R      &hml LGUI S      &hml LSHIFT T        &lt2_d_under                                      &lt2_h_equal   &hmr RSHIFT N        &hmr RGUI E          &hmr RALT I        &hmr RCTRL O         &kp SQT
-&left_shift     &hml LS(LCTRL) Z  &hml LS(LALT) X  &hml LS(LGUI) C  &hml LS(LC(LALT)) V  &lt3_b_lbrc       &left_bkt     &right_bkt        &lt3_k_rbrc    &hmr RS(RC(RALT)) M  &hmr RS(RGUI) COMMA  &hmr RS(RALT) DOT  &hmr RS(RCTRL) FSLH  &right_shift
+&kp TAB         &hml LC(LALT) Q   &hml LC(LGUI) W  &hml LA(LGUI) F  &hml LC(LA(LGUI)) P  &lt 1 G                                           &lt 1 J        &hmr RC(RA(RGUI)) L  &hmr RA(RGUI) U      &hmr RC(RGUI) Y    &hmr RC(RALT) SEMI   &bslh_pipe
+&bs_del         &hml LCTRL A      &hml LALT R      &hml LGUI S      &hml LSHIFT T        &lt 2 D                                           &lt 2 H        &hmr RSHIFT N        &hmr RGUI E          &hmr RALT I        &hmr RCTRL O         &kp SQT
+&left_shift     &hml LS(LCTRL) Z  &hml LS(LALT) X  &hml LS(LGUI) C  &hml LS(LC(LALT)) V  &lt 3 B           &left_bkt     &right_bkt        &lt 3 K        &hmr RS(RC(RALT)) M  &hmr RS(RGUI) COMMA  &hmr RS(RALT) DOT  &hmr RS(RCTRL) FSLH  &right_shift
 &lt 1 C_VOL_DN  &lt 2 C_VOL_UP    &kp LEFT         &kp RIGHT        &kp SPACE            &hml LSHFT ENTER  &sl 1         &hmr RSHFT ENTER  &kp SPACE                                                                     &lt 2 UP             &lt 1 DOWN
-)
-ZMK_LAYER(num,
+      >;
+    }; // colemak
+    /********************************************************************************/
+    /* NUM */
+    /********************************************************************************/
+    num {
+      bindings = <
 &kp GRAVE  &kp F1  &kp F2            &kp F3            &kp F4      &kp F5                            &kp F6        &kp F7     &kp F8     &kp F9     &kp F10          &kp F11
 &trans     &trans  &kp LS(N7)        &kp LS(N8)        &kp LS(N9)  &kp KP_MINUS                      &kp KP_PLUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_SLASH     &kp F12
 &trans     &trans  &kp LS(N4)        &kp LS(N5)        &kp LS(N6)  &kp UNDER                         &kp KP_EQUAL  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_ASTERISK  &kp F13
 &trans     &trans  &kp LS(N1)        &kp LS(N2)        &kp LS(N3)  &kp LS(N0)    &kp LBRC  &kp RBRC  &kp KP_N0     &kp KP_N1  &kp KP_N2  &kp KP_N3  &trans           &trans
 &trans     &trans  &kp LS(LG(LBKT))  &kp LS(LG(RBKT))  &kp LEFT    &kp RIGHT     &sl 2     &kp UP    &kp DOWN                                       &trans           &trans
-)
-ZMK_LAYER(sym,
+      >;
+    }; // num 
+    /********************************************************************************/
+    /* SYM */
+    /********************************************************************************/
+    sym {
+      bindings = <
 &trans  &trans  &trans    &trans    &trans            &kp LG(F6)                            &kp RS(F6)  &kp RA(F7)  &kp RG(F7)  &trans       &trans  &trans
 &trans  &trans  &kp HOME  &kp UP    &kp PG_UP         &kp MINUS                             &kp PLUS    &kp HOME    &kp UP      &kp PAGE_UP  &trans  &trans
 &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT         &kp UNDER                             &kp EQUAL   &kp LEFT    &kp DOWN    &kp RIGHT    &trans  &trans
 &trans  &trans  &kp END   &trans    &kp PG_DN         &trans            &kp LPAR  &kp RPAR  &trans      &kp END     &trans      &kp PG_DN    &trans  &trans
 &trans  &trans  &trans    &trans    &kp LS(LG(LBKT))  &kp LS(LG(RBKT))  &sl 3     &trans    &trans                                           &trans  &trans
-)
-ZMK_LAYER(mouse,
+      >;
+    }; // sym
+    /********************************************************************************/
+    /* MOUSE */
+    /********************************************************************************/
+    mouse {
+      bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans    &trans    &trans    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans    &mkp MB4  &trans    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &mkp MB1  &mo 4     &mkp MB2  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &mkp MB3  &trans    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &sl 0   &trans  &trans                                &trans  &trans
-)
-ZMK_LAYER(snipe,
+      >;
+    }; // mouse
+    /********************************************************************************/
+    /* SNIPE */
+    /********************************************************************************/
+    snipe {
+      bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &trans  &trans    &trans    &trans    &trans  &trans
 &trans      &trans        &trans        &trans        &trans        &trans                        &trans  &trans    &mkp MB4  &trans    &trans  &trans
 &trans      &trans        &trans        &trans        &trans        &trans                        &trans  &mkp MB1  &mo 3     &mkp MB2  &trans  &trans
 &trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans    &mkp MB3  &trans    &trans  &trans
 &trans      &trans        &trans        &trans        &trans        &trans        &sl 0   &trans  &trans                                &trans  &trans
-)
+      >;
+    }; // snipe
+  };
+};
