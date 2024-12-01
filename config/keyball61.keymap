@@ -53,6 +53,10 @@
   tapping-term-ms = <220>;
 };
 
+&sl {
+  release-after-ms = <300000>; // 5 * 60 * 1000
+};
+
 /* HRM combos */
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
     ZMK_HOLD_TAP(NAME, \
@@ -83,8 +87,13 @@ ZMK_MOD_MORPH(bs_del,
 )
 ZMK_MOD_MORPH(gr_esc,
   bindings = <&kp ESC>, <&kp GRAVE>;
-  keep-mods = <MOD_LSFT>;
+  keep-mods = <MOD_RSFT>;
   mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+)
+ZMK_MOD_MORPH(tilde_esc,
+  bindings = <&gr_esc>, <&kp TILDE>;
+  keep-mods = <MOD_RCTL>;
+  mods = <(MOD_LALT|MOD_LCTL|MOD_RALT|MOD_RCTL)>;
 )
 
 /* Keymap */
@@ -96,11 +105,11 @@ ZMK_MOD_MORPH(gr_esc,
     /********************************************************************************/
     colemak {
       bindings = <
-&gr_esc         &kp N1            &kp N2           &kp N3           &kp N4               &kp N5                                            &kp N6         &kp N7               &kp N8               &kp N9             &kp N0               &kp MINUS
-&kp TAB         &hml LC(LALT) Q   &hml LC(LGUI) W  &hml LA(LGUI) F  &hml LC(LA(LGUI)) P  &lt 1 G                                           &lt 1 J        &hmr RC(RA(RGUI)) L  &hmr RA(RGUI) U      &hmr RC(RGUI) Y    &hmr RC(RALT) SEMI   &bslh_pipe
+&tilde_esc      &kp N1            &kp N2           &kp N3           &kp N4               &kp N5                                            &kp N6         &kp N7               &kp N8               &kp N9             &kp N0               &kp MINUS
+&kp TAB         &hml LC(LALT) Q   &hml LC(LGUI) W  &hml LA(LGUI) F  &hml LC(LA(LGUI)) P  &lt 1 G                                           &lt 1 J        &hmr RC(RA(RGUI)) L  &hmr RA(RGUI) U      &hmr RC(RGUI) Y    &hmr RC(RALT) SEMI   &kp BSLH
 &bs_del         &hml LCTRL A      &hml LALT R      &hml LGUI S      &hml LSHIFT T        &lt 2 D                                           &lt 2 H        &hmr RSHIFT N        &hmr RGUI E          &hmr RALT I        &hmr RCTRL O         &kp SQT
 &left_shift     &hml LS(LCTRL) Z  &hml LS(LALT) X  &hml LS(LGUI) C  &hml LS(LC(LALT)) V  &lt 3 B           &left_bkt     &right_bkt        &lt 3 K        &hmr RS(RC(RALT)) M  &hmr RS(RGUI) COMMA  &hmr RS(RALT) DOT  &hmr RS(RCTRL) FSLH  &right_shift
-&lt 1 C_VOL_DN  &lt 2 C_VOL_UP    &kp LEFT         &kp RIGHT        &kp SPACE            &hml LSHFT ENTER  &sl 1         &hmr RSHFT ENTER  &kp SPACE                                                                     &lt 2 UP             &lt 1 DOWN
+&lt 1 C_VOL_DN  &lt 2 C_VOL_UP    &kp LEFT         &kp RIGHT        &kp SPACE            &hml LSHFT ENTER  &to 1         &hmr RSHFT ENTER  &kp SPACE                                                                     &lt 2 UP           &lt 1 DOWN
       >;
     }; // colemak
     /********************************************************************************/
@@ -109,10 +118,10 @@ ZMK_MOD_MORPH(gr_esc,
     num {
       bindings = <
 &kp GRAVE  &kp F1  &kp F2            &kp F3            &kp F4      &kp F5                            &kp F6        &kp F7     &kp F8     &kp F9     &kp F10          &kp F11
-&trans     &trans  &kp LS(N7)        &kp LS(N8)        &kp LS(N9)  &kp KP_MINUS                      &kp KP_PLUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_SLASH     &kp F12
+&kp TILDE  &trans  &kp LS(N7)        &kp LS(N8)        &kp LS(N9)  &kp KP_MINUS                      &kp KP_PLUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_SLASH     &kp F12
 &trans     &trans  &kp LS(N4)        &kp LS(N5)        &kp LS(N6)  &kp UNDER                         &kp KP_EQUAL  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_ASTERISK  &kp F13
 &trans     &trans  &kp LS(N1)        &kp LS(N2)        &kp LS(N3)  &kp LS(N0)    &kp LBRC  &kp RBRC  &kp KP_N0     &kp KP_N1  &kp KP_N2  &kp KP_N3  &trans           &trans
-&trans     &trans  &kp LS(LG(LBKT))  &kp LS(LG(RBKT))  &kp LEFT    &kp RIGHT     &sl 2     &kp UP    &kp DOWN                                       &trans           &trans
+&trans     &trans  &kp LS(LG(LBKT))  &kp LS(LG(RBKT))  &kp LEFT    &kp RIGHT     &to 2     &kp UP    &kp DOWN                                       &trans           &trans
       >;
     }; // num 
     /********************************************************************************/
@@ -124,7 +133,7 @@ ZMK_MOD_MORPH(gr_esc,
 &trans  &trans  &kp HOME  &kp UP    &kp PG_UP         &kp MINUS                             &kp PLUS    &kp HOME    &kp UP      &kp PAGE_UP  &trans  &trans
 &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT         &kp UNDER                             &kp EQUAL   &kp LEFT    &kp DOWN    &kp RIGHT    &trans  &trans
 &trans  &trans  &kp END   &trans    &kp PG_DN         &trans            &kp LPAR  &kp RPAR  &trans      &kp END     &trans      &kp PG_DN    &trans  &trans
-&trans  &trans  &trans    &trans    &kp LS(LG(LBKT))  &kp LS(LG(RBKT))  &sl 3     &trans    &trans                                           &trans  &trans
+&trans  &trans  &trans    &trans    &kp LS(LG(LBKT))  &kp LS(LG(RBKT))  &to 3     &trans    &trans                                           &trans  &trans
       >;
     }; // sym
     /********************************************************************************/
@@ -136,7 +145,7 @@ ZMK_MOD_MORPH(gr_esc,
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans    &mkp MB4  &trans    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &mkp MB1  &mo 4     &mkp MB2  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &mkp MB3  &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &sl 0   &trans  &trans                                &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &to 0   &trans  &trans                                &trans  &trans
       >;
     }; // mouse
     /********************************************************************************/
@@ -148,7 +157,7 @@ ZMK_MOD_MORPH(gr_esc,
 &trans      &trans        &trans        &trans        &trans        &trans                        &trans  &trans    &mkp MB4  &trans    &trans  &trans
 &trans      &trans        &trans        &trans        &trans        &trans                        &trans  &mkp MB1  &mo 3     &mkp MB2  &trans  &trans
 &trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans    &mkp MB3  &trans    &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans        &sl 0   &trans  &trans                                &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &to 0   &trans  &trans                                &trans  &trans
       >;
     }; // snipe
   };
