@@ -127,7 +127,7 @@ sym { bindings = <
 &trans          &kp LBRC          &kp LEFT         &kp DOWN          &kp RIGHT           &kp UNDER                                    &kp EQUAL   &kp LEFT             &kp DOWN             &kp RIGHT          &kp RBRC             &trans
 &trans          &kp LBKT          &kp END          &trans            &kp PG_DN           &trans            &kp LPAR   &kp RPAR        &trans      &kp END              &trans               &kp PG_DN          &kp RBKT             &trans
 &trans          &trans            &trans           &trans            &kp LS(LG(LBKT))    &kp LS(LG(RBKT))  &to 3      &trans          &trans                                                                   &trans               &trans
-> }; // sym
+>; }; // sym
 /********************************************************************************/
 /* MOUSE */
 /********************************************************************************/
