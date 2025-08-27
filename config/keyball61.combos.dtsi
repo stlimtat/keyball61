@@ -50,6 +50,7 @@ ZMK_COMBO(cmd-v, &kp LG(V), LB2 LB1, COLEMAK NUM SYM, COMBO_TERM_FAST, COMBO_IDL
 /* Horizontal combos - left thumb row */
 // ZMK_COMBO(studio-unlock, &studio-unlock, LH4 LH3, COLEMAK NUM SYM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(left-reset, &bootloader, LH6 LH5, COLEMAK NUM SYM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(toggle-qwerty, &to 4, RH2 RH3, NUM SYM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Horizontal combos - right number row */
 ZMK_COMBO(f6, &kp F6, RN0 RN1, COLEMAK NUM SYM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
