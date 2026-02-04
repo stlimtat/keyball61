@@ -107,7 +107,7 @@ colemak { bindings = <
 &kp TAB         &hml LC(LALT) Q   &hml LC(LGUI) W  &hml LA(LGUI) F  &hml LC(LA(LGUI)) P  &lt 1 G                                      &lt 1 J     &hmr RC(RA(RGUI)) L  &hmr RA(RGUI) U      &hmr RC(RGUI) Y    &hmr RC(RALT) SEMI   &kp BSLH
 &bs_del         &hml LCTRL A      &hml LALT R      &hml LGUI S      &hml LSHIFT T        &lt 2 D                                      &lt 2 H     &hmr RSHIFT N        &hmr RGUI E          &hmr RALT I        &hmr RCTRL O         &kp SQT
 &left_shift     &hml LS(LCTRL) Z  &hml LS(LALT) X  &hml LS(LGUI) C  &hml LS(LC(LALT)) V  &lt 4 B           &left_bkt  &right_bkt      &lt 4 K     &hmr RS(RC(RALT)) M  &hmr RS(RGUI) COMMA  &hmr RS(RALT) DOT  &hmr RS(RCTRL) FSLH  &right_shift
-&lt 1 DOWN      &lt 2 UP          &kp LEFT         &kp RIGHT        &kp SPACE            &hml LSHFT RET    &to 1      &hmr RSHFT RET  &kp SPACE                                                                &lt 2 C_VOL_DOWN     &lt 1 C_VOL_UP
+&lt 1 DOWN      &lt 2 UP          &kp LEFT         &kp RIGHT        &kp SPACE            &hml LSHFT RET    &to 1      &hmr RSHFT RET  &kp SPACE                                                                &lt 2 C_VOL_DN       &lt 1 C_VOL_UP
 >; }; // colemak
 /********************************************************************************/
 /* NUM */
