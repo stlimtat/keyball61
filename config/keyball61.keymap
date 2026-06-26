@@ -17,12 +17,12 @@
 #define THUMBS_L LH0 LH1 LH2 LH3 LH4 LH5 LH6
 #define THUMBS_R RH0 RH1 RH2 RH3
 
-#define COLEMAK 0
-#define NUM     1
-#define SYM     2
-#define QWERTY  3
-#define MOUSE   4
-#define SNIPE   5
+#define CMK   0 // Colemak
+#define NUM   1
+#define SYM   2
+#define QWY   3 // QWERTY
+#define MSE   4 // MOUSE
+#define SNP   5 // SNIPE
 
 #define HOLD_TAPPING_TERM_MS 180
 #define QUICK_TAP_MS 175
@@ -103,61 +103,61 @@ ZMK_MOD_MORPH(tilde_esc,
 /* COLEMAK */
 /********************************************************************************/
 colemak { bindings = <
-&tilde_esc      &kp N1            &kp N2           &kp N3           &kp N4               &kp N5                                       &kp N6      &kp N7               &kp N8               &kp N9             &kp N0               &kp MINUS
-&kp TAB         &hml LC(LALT) Q   &hml LC(LGUI) W  &hml LA(LGUI) F  &hml LC(LA(LGUI)) P  &lt 1 G                                      &lt 1 J     &hmr RC(RA(RGUI)) L  &hmr RA(RGUI) U      &hmr RC(RGUI) Y    &hmr RC(RALT) SEMI   &kp BSLH
-&bs_del         &hml LCTRL A      &hml LALT R      &hml LGUI S      &hml LSHIFT T        &lt 2 D                                      &lt 2 H     &hmr RSHIFT N        &hmr RGUI E          &hmr RALT I        &hmr RCTRL O         &kp SQT
-&left_shift     &hml LS(LCTRL) Z  &hml LS(LALT) X  &hml LS(LGUI) C  &hml LS(LC(LALT)) V  &lt 4 B           &left_bkt  &right_bkt      &lt 4 K     &hmr RS(RC(RALT)) M  &hmr RS(RGUI) COMMA  &hmr RS(RALT) DOT  &hmr RS(RCTRL) FSLH  &right_shift
-&lt 1 DOWN      &lt 2 UP          &kp LEFT         &kp RIGHT        &kp SPACE            &hml LSHFT RET    &to 1      &hmr RSHFT RET  &kp SPACE                                                                &lt 2 C_VOL_DN       &lt 1 C_VOL_UP
+&tilde_esc      &kp N1            &kp N2           &kp N3           &kp N4               &kp N5                                        &kp N6           &kp N7               &kp N8               &kp N9             &kp N0               &kp MINUS
+&kp TAB         &hml LC(LALT) Q   &hml LC(LGUI) W  &hml LA(LGUI) F  &hml LC(LA(LGUI)) P  &lt NUM G                                     &lt NUM J        &hmr RC(RA(RGUI)) L  &hmr RA(RGUI) U      &hmr RC(RGUI) Y    &hmr RC(RALT) SEMI   &kp BSLH
+&bs_del         &hml LCTRL A      &hml LALT R      &hml LGUI S      &hml LSHIFT T        &lt SYM D                                     &lt SYM H        &hmr RSHIFT N        &hmr RGUI E          &hmr RALT I        &hmr RCTRL O         &kp SQT
+&left_shift     &hml LS(LCTRL) Z  &hml LS(LALT) X  &hml LS(LGUI) C  &hml LS(LC(LALT)) V  &lt MSE B         &left_bkt  &right_bkt       &lt MSE K        &hmr RS(RC(RALT)) M  &hmr RS(RGUI) COMMA  &hmr RS(RALT) DOT  &hmr RS(RCTRL) FSLH  &right_shift
+&lt NUM DOWN    &lt SYM UP        &kp LEFT         &kp RIGHT        &kp SPACE            &hml LSHFT RET    &to NUM    &hmr RSHFT RET2  &kp SPACE                                                                 &lt SYM C_VOL_DN     &lt NUM C_VOL_UP
 >; }; // colemak
 /********************************************************************************/
 /* NUM */
 /********************************************************************************/
 num { bindings = <
-&trans          &kp F1            &kp F2           &kp F3            &kp F4              &kp F5                                       &kp F6      &kp F7               &kp F8               &kp F9             &kp F10              &kp F11
-&trans          &kp GRAVE         &kp AMPS         &kp STAR          &kp LPAR            &kp MINUS                                    &kp PLUS    &kp N7               &kp N8               &kp N9             &kp FSLH             &kp F12
-&trans          &kp TILDE         &kp DLLR         &kp PRCNT         &kp CARET           &kp UNDER                                    &kp EQUAL   &kp N4               &kp N5               &kp N6             &kp STAR             &kp F13
-&trans          &trans            &kp EXCL         &kp AT            &kp HASH            &kp RPAR          &kp LBRC   &kp RBRC        &kp N0      &kp N1               &kp N2               &kp N3             &trans               &kp F14
-&trans          &trans            &trans           &trans            &kp LS(LG(LBKT))    &kp LS(LG(RBKT))  &to 2      &trans          &trans                                                                   &trans               &kp F15
+&trans          &kp F1            &kp F2           &kp F3            &kp F4              &kp F5                                        &kp F6           &kp F7               &kp F8               &kp F9             &kp F10              &kp F11
+&trans          &kp GRAVE         &kp AMPS         &kp STAR          &kp LPAR            &kp MINUS                                     &kp PLUS         &kp N7               &kp N8               &kp N9             &kp FSLH             &kp F12
+&trans          &kp TILDE         &kp DLLR         &kp PRCNT         &kp CARET           &kp UNDER                                     &kp EQUAL        &kp N4               &kp N5               &kp N6             &kp STAR             &kp F13
+&trans          &trans            &kp EXCL         &kp AT            &kp HASH            &kp RPAR          &kp LBRC   &kp RBRC         &kp N0           &kp N1               &kp N2               &kp N3             &trans               &kp F14
+&trans          &trans            &trans           &trans            &kp LS(LG(LBKT))    &kp LS(LG(RBKT))  &to SYM    &kp RS(RG(RBKT)) &kp RS(RG(RBKT))                                                              &trans               &kp F15
 >; }; // num 
 /********************************************************************************/
 /* SYM */
 /********************************************************************************/
 sym { bindings = <
-&trans          &trans            &trans           &trans            &trans              &kp LG(F6)                                   &kp RS(F6)  &kp RA(F7)           &kp RG(F7)           &trans             &trans               &trans
-&trans          &kp GRAVE         &kp HOME         &kp UP            &kp PG_UP           &kp MINUS                                    &kp PLUS    &kp HOME             &kp UP               &kp PG_UP          &trans               &trans
-&trans          &kp TILDE         &kp LEFT         &kp DOWN          &kp RIGHT           &kp UNDER                                    &kp EQUAL   &kp LEFT             &kp DOWN             &kp RIGHT          &trans               &trans
-&trans          &trans            &kp END          &trans            &kp PG_DN           &trans            &kp LPAR   &kp RPAR        &trans      &kp END              &trans               &kp PG_DN          &trans               &trans
-&trans          &trans            &trans           &trans            &kp LS(LG(LBKT))    &kp LS(LG(RBKT))  &to 3      &trans          &trans                                                                   &trans               &trans
+&trans          &trans            &trans           &trans            &trans              &kp LG(F6)                                    &kp RS(F6)       &kp RA(F7)           &kp RG(F7)           &trans             &trans               &trans
+&trans          &kp GRAVE         &kp HOME         &kp UP            &kp PG_UP           &kp MINUS                                     &kp PLUS         &kp HOME             &kp UP               &kp PG_UP          &trans               &trans
+&trans          &kp TILDE         &kp LEFT         &kp DOWN          &kp RIGHT           &kp UNDER                                     &kp EQUAL        &kp LEFT             &kp DOWN             &kp RIGHT          &trans               &trans
+&trans          &trans            &kp END          &trans            &kp PG_DN           &trans            &kp LPAR   &kp RPAR         &trans           &kp END              &trans               &kp PG_DN          &trans               &trans
+&trans          &trans            &trans           &trans            &kp LS(LG(LBKT))    &kp LS(LG(RBKT))  &to QWY    &kp RS(RG(LBKT)) &kp RS(RG(RBKT))                                                              &trans               &trans
 >; }; // sym
 /********************************************************************************/
 /* QWERTY */
 /********************************************************************************/
 qwerty { bindings = <
-&trans          &trans            &trans           &trans            &trans              &trans                                       &trans      &trans               &trans               &trans             &trans               &trans
-&trans          &kp Q             &kp W            &kp E             &kp T               &kp Y                                        &kp U       &kp I                &kp O                &kp P              &kp RBKT             &trans
-&trans          &kp A             &kp S            &kp D             &kp F               &kp G                                        &kp H       &kp J                &kp K                &kp L              &kp SEMI             &trans
-&trans          &kp Z             &kp X            &kp C             &kp V               &kp B             &trans     &trans          &kp N       &kp M                &kp COMMA            &kp DOT            &kp FSLH             &trans
-&trans          &trans            &trans           &trans            &trans              &trans            &to 4      &trans          &trans                                                                   &trans               &trans
+&trans          &trans            &trans           &trans            &trans              &trans                                        &trans           &trans               &trans               &trans             &trans               &trans
+&trans          &kp Q             &kp W            &kp E             &kp T               &kp Y                                         &kp U            &kp I                &kp O                &kp P              &kp RBKT             &trans
+&trans          &kp A             &kp S            &kp D             &kp F               &kp G                                         &kp H            &kp J                &kp K                &kp L              &kp SEMI             &trans
+&trans          &kp Z             &kp X            &kp C             &kp V               &kp B             &trans     &trans           &kp N            &kp M                &kp COMMA            &kp DOT            &kp FSLH             &trans
+&trans          &trans            &trans           &trans            &trans              &trans            &to MSE    &trans           &trans                                                                        &trans               &trans
 >; }; // qwerty
 /********************************************************************************/
 /* MOUSE */
 /********************************************************************************/
 mouse { bindings = <
-&trans          &trans            &trans           &trans            &trans              &trans                                       &trans      &trans               &trans               &trans             &trans               &trans
-&trans          &trans            &trans           &trans            &trans              &trans                                       &trans      &trans               &mkp MB4             &trans             &trans               &trans
-&trans          &trans            &trans           &trans            &trans              &trans                                       &trans      &mkp MB1             &mo 4                &mkp MB2           &trans               &trans
-&trans          &trans            &trans           &trans            &trans              &trans            &trans     &trans          &trans      &trans               &mkp MB3             &trans             &trans               &trans
-&trans          &trans            &trans           &trans            &trans              &trans            &to 0      &trans          &trans                                                                   &trans               &trans
+&bt BT_CLR      &bt BT_SEL 0      &trans           &trans            &trans              &trans                                        &trans           &trans               &trans               &trans             &bt BT_SEL 0         &bt BT_CLR
+&trans          &trans            &trans           &trans            &trans              &trans                                        &trans           &trans               &mkp MB4             &trans             &trans               &trans
+&trans          &trans            &trans           &trans            &trans              &trans                                        &trans           &mkp MB1             &mo 4                &mkp MB2           &trans               &trans
+&trans          &trans            &trans           &trans            &trans              &trans            &trans     &to SNP          &trans           &trans               &mkp MB3             &trans             &trans               &trans
+&trans          &trans            &trans           &trans            &trans              &trans            &to SNP    &trans           &trans                                                                        &trans               &trans
 >; }; // mouse
 /********************************************************************************/
 /* SNIPE */
 /********************************************************************************/
 snipe { bindings = <
-&bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1     &bt BT_SEL 2      &bt BT_SEL 3        &bt BT_SEL 4                                 &trans      &trans               &trans               &trans             &trans               &trans
-&trans          &trans            &trans           &trans            &trans              &trans                                       &trans      &trans               &mkp MB4             &trans             &trans               &trans
-&trans          &trans            &trans           &trans            &trans              &trans                                       &trans      &mkp MB1             &mo 4                &mkp MB2           &trans               &trans
-&trans          &trans            &trans           &trans            &trans              &trans            &trans     &trans          &trans      &trans               &mkp MB3             &trans             &trans               &trans
-&trans          &trans            &trans           &trans            &trans              &trans            &to 0      &trans          &trans                                                                   &trans               &trans
+&bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1     &bt BT_SEL 2      &bt BT_SEL 3        &bt BT_SEL 4                                  &bt BT_SEL 4     &bt BT_SEL 3         &bt BT_SEL 2         &bt BT_SEL 1       &bt BT_SEL 0         &bt BT_CLR
+&trans          &trans            &trans           &trans            &trans              &trans                                        &trans           &trans               &mkp MB4             &trans             &trans               &trans
+&trans          &trans            &trans           &trans            &trans              &trans                                        &trans           &mkp MB1             &mo 4                &mkp MB2           &trans               &trans
+&trans          &trans            &trans           &trans            &trans              &trans            &trans     &trans           &trans           &trans               &mkp MB3             &trans             &trans               &trans
+&trans          &trans            &trans           &trans            &trans              &trans            &to CMK    &trans           &trans                                                                        &trans               &trans
 >; }; // snipe
   };
 };
