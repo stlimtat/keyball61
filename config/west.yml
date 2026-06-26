@@ -27,6 +27,8 @@ manifest:
       url-base: https://github.com/stlimtat
     - name: urob
       url-base: https://github.com/urob
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
 
   projects:
     - name: zmk-helpers
